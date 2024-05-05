@@ -1,3 +1,11 @@
+####################
+# Part 2 for Day 1 #
+####################
+
+## Regex basics. 
+## pattern finding using regex.
+## day2 for use of regex expressions
+
 import requests
 import re
 
