@@ -2,11 +2,11 @@
 # Part 1 for Day 2 #
 ####################
 
-## uses basic regex
+## uses some more regex
 ## lot of optimisation scope here
-## works in O(n^3)
+## works in O(nk)
 
-## input used for testin
+## input used for testing
 ## input = ["Game 1: 3 blue, 4 red; 1 red, 2 green, 6 blue; 2 green",
 ##          "Game 2: 1 blue, 2 green; 3 green, 4 blue, 1 red; 1 green, 1 blue",
 ##         "Game 3: 8 green, 6 blue, 20 red; 5 blue, 4 red, 13 green; 5 green, 1 red",
