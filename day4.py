@@ -2,7 +2,8 @@
 #    Part 1 for Day 4    #
 ##########################
 ## lot of optimisation scope here
-## works in O(n^2)
+## part 1 works in O(n^2)
+## part 2 works in O(n^3)
 
 import re
 
@@ -29,6 +30,30 @@ def get_sum(cards):
             sum += 2**matches
     return sum
 
+def get_count(input):
+    cards = {}
+    count = 0
+    for i in range(len(input)):
+        card = input[i].split(":")[1]
+        cards[i] = [card,1]
+        count+=1
+        
+    for i in range(len(input)):
+        card = cards[i]
+        all_nums = re.findall(r"\d+",card[0])
+        win_nums = all_nums[:10]
+        own_nums = all_nums[10:]
+        match = 0
+        for num in win_nums:
+            if num in own_nums:
+                match+=1
+        for each in range(card[1]):
+            for j in range(1,match+1):
+                cards[i+j][1] = cards[i+j][1] + 1
+                count+=1
+        
+        return count
+
 with open('read.txt', "r") as file:
     input = file.read()
 
@@ -45,3 +70,4 @@ with open('read.txt', "r") as file:
 
 cards = input.split("\n")
 print(get_sum(cards))
+print(get_count(cards))
